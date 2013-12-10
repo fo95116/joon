@@ -7,6 +7,8 @@ gem 'rails', '3.2.14'
 
 gem 'pg'
 gem 'instagram'
+gem 'omniauth'
+gem 'omniauth-instagram'
 
 group :development, :test do
   gem 'rspec-rails'
