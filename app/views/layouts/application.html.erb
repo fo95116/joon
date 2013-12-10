@@ -7,6 +7,15 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <nav id="header">
+  <% if current_user %>
+    Welcome <%= current_user.name %>!
+    <%= link_to "Sign Out", signout_path, id: "sign_out" %>
+  <% else %>
+    <%= link_to "Sign in with Facebook!", "/auth/facebook", id: "face" %>
+    <%= link_to "Sign in with Instagram!", "/auth/instagram", id: "gram" %>
+  <% end %>
+</nav>
 
 <%= yield %>
 
