@@ -1,5 +1,5 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
- provider :instagram, '5780ec8e8d6f47918ee23f31d835eff9', '3d010924b1a648089487a68c234a482c'
- provider :facebook, '612969355436541', '3a2a8dfd341d9a83b5b50493fae13965'
+ provider :instagram, 'caae8938fffc4e5b9f549695cd1e6933', '3a82993046cb400e8f19a181eba43358'
+ provider :facebook, '1420603004840702', 'feea5433eb0ea3a4d7103a3b05ebedd4'
 
 end
