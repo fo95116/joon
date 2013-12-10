@@ -1,5 +1,8 @@
 Joon::Application.routes.draw do
-  root to: 'home#index'
+  resources :sessions, :constraints => { :protocol => "https" }
+
+  root to: 'sessions#index'
+  # root to: 'home#index'
 
 
 end
