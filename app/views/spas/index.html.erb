@@ -1,1 +1,11 @@
-<h1>HOla!</h1>
+<h1>HOLA!</h1>
+
+<%= form_tag('/sessions', :remote => true) do %>
+  <%= text_field_tag "username", nil, :placeholder => "username", :size => 30 %>
+  <%= submit_tag "return", :id => "button" %>
+<% end %>
+
+<%= button_tag "Instagram", :id => "instagram" %>
+
+<div id="pics"></div>
+<div id="images"></div>
