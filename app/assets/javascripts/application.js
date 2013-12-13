@@ -131,6 +131,9 @@ $(function () {
                                         $('#final').append('<p>' + $text + '</p>')
                                       })
                                       // $reults is our final array that will be inserted into d3
+                                      //============================ d3!!!!!!!!!!!!!!!!!=================
+
+                                      //=================================================================
                                       console.log($results)
                                     } else {
 
