@@ -132,6 +132,10 @@ $(function () {
                                     } else {
 
                                       $('#final').append('<p>Sorry there are no comments for this image.</p>')
+                                        setTimeout(function(){
+                                        //reload the page
+                                        document.location.reload();
+                                        }, 1000)
                                     }
 
 
