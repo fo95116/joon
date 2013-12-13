@@ -120,15 +120,18 @@ $(function () {
                                     if(typeof $comments !== 'undefined' && $comments.length > 0){
                                       // console.log($comments)
                                       //comments is an array with objects that house my text data
+                                      var $results = [];
                                       $('#final').append('<img src="' + $img + '"/>')
                                       _.each($comments, function(txt) {
                                         // console.log(txt);
                                         var $text = txt['text'];
-                                        console.log($text);
-
-
+                                        // console.log($text);
+                                        $results.push($text);
+                                        // console.log($results);
                                         $('#final').append('<p>' + $text + '</p>')
                                       })
+                                      // $reults is our final array that will be inserted into d3
+                                      console.log($results)
                                     } else {
 
                                       $('#final').append('<p>Sorry there are no comments for this image.</p>')
