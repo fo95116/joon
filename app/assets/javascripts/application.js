@@ -122,50 +122,24 @@ $(function () {
                                       //comments is an array with objects that house my text data
                                       var $results = [];
                                       $('#final').append('<img src="' + $img + '"/>')
+
                                       _.each($comments, function(txt) {
-                                        // console.log(txt);
+                                        // this section is where we have our comments as sentances
+                                        // we must split our sentances into words and push them into an array
+                                        // split $text into $word and push into $results
                                         var $text = txt['text'];
-                                        // console.log($text);
-                                        $results.push($text);
-                                        // console.log($results);
-                                        // $('#final').append('<p>' + $text + '</p>')
+
+                                        $text = $text.trim().split(/\s+/);
+
+
+                                        console.log($text)
+                                        // $results.push($text);
+
                                       })
-                                      // $reults is our final array that will be inserted into d3
-                                      console.log($results)
+                                      // console.log($results)
+
                                       //============================ d3!!!!!!!!!!!!!!!!!=================
-                                      var fill = d3.scale.category20();
 
-                                      d3.layout.cloud().size([300, 300])
-                                          .words(['this', 'that', 'very', 'super',
-                                            'ratchet', 'more', 'and', 'moar', 'super freak',
-                                            'money', 'hundreds'].map(function(d) {
-                                            return {text: d, size: 10 + Math.random() * 90};
-                                          }))
-                                          .padding(5)
-                                          .rotate(function() { return ~~(Math.random() * 2) * 90; })
-                                          .font("Helvetica")
-                                          .fontSize(function(d) { return d.size; })
-                                          .on("end", draw)
-                                          .start();
-
-                                      function draw(words) {
-                                        d3.select("body").append("svg")
-                                            .attr("width", 300)
-                                            .attr("height", 300)
-                                          .append("g")
-                                            .attr("transform", "translate(150,150)")
-                                          .selectAll("text")
-                                            .data(words)
-                                          .enter().append("text")
-                                            .style("font-size", function(d) { return d.size + "px"; })
-                                            .style("font-family", "Helvetica")
-                                            .style("fill", function(d, i) { return fill(i); })
-                                            .attr("text-anchor", "middle")
-                                            .attr("transform", function(d) {
-                                              return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-                                            })
-                                            .text(function(d) { return d.text; });
-                                      }
 
                                       //================================================================
                                     } else {
