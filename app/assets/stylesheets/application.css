@@ -11,3 +11,5 @@
  *= require_self
  *= require_tree .
  */
+
+h2, h3 { font-family: 'Lobster Two', cursive;}

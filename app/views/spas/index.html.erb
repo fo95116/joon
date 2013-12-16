@@ -1,14 +1,17 @@
-<h1>HOLA!</h1>
-<div id="search">
-  <%= form_tag('/sessions', :remote => true) do %>
-    <%= text_field_tag "username", nil, :placeholder => "username", :size => 30 %>
-    <%= submit_tag "return", :id => "button" %>
-  <% end %>
-</div>
+<% unless !current_user %>
+  <h1>HOLA!</h1>
+  <div class="column_3">
+    <div id="search">
+      <%= form_tag('/sessions', :remote => true) do %>
+        <%= text_field_tag "username", nil, :placeholder => "username", :size => 30 %>
+        <%= submit_tag "return", :id => "button" %>
+      <% end %>
+    </div>
+  </div>
 
-
-
-<div id="errors"></div>
-<div id="pics"></div>
-<div id="images"></div>
-<div id="final"></div>
+  <h3> this is a test </h3>
+  <div id="errors"></div>
+  <div id="pics"></div>
+  <div id="images"></div>
+  <div id="final"></div>
+<% end %>
