@@ -1,11 +1,2 @@
-<% if current_user %>
-
-  <%= link_to "Proceed to Instagram",  spas_path %>
 
 
-<% else %>
-
- <%= link_to "Sign in with Facebook!", "/auth/facebook", id: "face" %>
- <%= link_to "Sign in with Instagram!", "/auth/instagram", id: "gram" %>
-
-<% end %>
