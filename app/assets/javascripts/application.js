@@ -142,37 +142,50 @@ $(function () {
                                       console.log($results)
                                       //============================ d3!!!!!!!!!!!!!!!!!=================
                                       // conditional to map words that are less than 10 with a different layout
-                                      var fill = d3.scale.category20();
-
-                                      d3.layout.cloud().size([306, 306])
-                                          .words($results.map(function(d) {
-                                            return {text: d, size: 10 + Math.random() * 40};
-                                          }))
-                                          .padding(0.5)
-                                          .rotate(function(d) { return ~~(Math.random() * 5) * 50 - 60; })
-                                          .font("Helvetica")
-                                          .fontSize(function(d) { return d.size; })
-                                          .on("end", draw)
-                                          .start();
-
-                                      function draw(words) {
-                                        d3.select("body").append("svg")
-                                            .attr("width", 306)
-                                            .attr("height", 306)
-                                          .append("g")
-                                            .attr("transform", "translate(150,150)")
-                                          .selectAll("text")
-                                            .data(words)
-                                          .enter().append("text")
-                                            .style("font-size", function(d) { return d.size + "px"; })
-                                            .style("font-family", "Helvetica")
-                                            .style("fill", function(d, i) { return fill(i); })
-                                            .attr("text-anchor", "middle")
-                                            .attr("transform", function(d) {
-                                              return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
-                                            })
-                                            .text(function(d) { return d.text; });
+                                      if($results.length <= 5) {
+                                        console.log($results.length)
+                                        console.log('array is small')
+                                      } else if($results.length <= 10) {
+                                        console.log($results.length)
+                                        console.log('array is medium')
+                                      } else if($results.length <= 15) {
+                                        console.log($results.length)
+                                        console.log('array is big')
+                                      } else {
+                                        console.log($results.length)
+                                        console.log('array is really big')
                                       }
+                                      // var fill = d3.scale.category20();
+
+                                      // d3.layout.cloud().size([306, 306])
+                                      //     .words($results.map(function(d) {
+                                      //       return {text: d, size: 10 + Math.random() * 40};
+                                      //     }))
+                                      //     .padding(0.5)
+                                      //     .rotate(function(d) { return ~~(Math.random() * 5) * 50 - 60; })
+                                      //     .font("Helvetica")
+                                      //     .fontSize(function(d) { return d.size; })
+                                      //     .on("end", draw)
+                                      //     .start();
+
+                                      // function draw(words) {
+                                      //   d3.select("body").append("svg")
+                                      //       .attr("width", 306)
+                                      //       .attr("height", 306)
+                                      //     .append("g")
+                                      //       .attr("transform", "translate(150,150)")
+                                      //     .selectAll("text")
+                                      //       .data(words)
+                                      //     .enter().append("text")
+                                      //       .style("font-size", function(d) { return d.size + "px"; })
+                                      //       .style("font-family", "Helvetica")
+                                      //       .style("fill", function(d, i) { return fill(i); })
+                                      //       .attr("text-anchor", "middle")
+                                      //       .attr("transform", function(d) {
+                                      //         return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                                      //       })
+                                      //       .text(function(d) { return d.text; });
+                                      // }
 
                                       //================================================================
                                     } else {
