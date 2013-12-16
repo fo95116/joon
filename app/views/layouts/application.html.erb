@@ -10,12 +10,23 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <nav id="header">
-    <% if current_user %>
-      Welcome <%= current_user.name %>!
-      <%= link_to "Sign Out", signout_path, id: "sign_out" %>
-    <% end %>
-  </nav>
+
+
+  <header class="bck margin-top margin-bottom">
+    <div class="row">
+      <div class="column_6">
+          <h2>welcome!</h2>
+      </div>
+      <nav class="column_6 text right">
+          <% if current_user %>
+            Welcome <strong><%= current_user.name %></strong>
+            <%= link_to "Sign Out", signout_path, id: "sign_out" %>
+          <% else %>
+            <h2><%= link_to "Sign in with Instagram!", "/auth/instagram", id: "gram" %></h>
+          <% end %>
+      </nav>
+    </div>
+  </header>
 
 <%= yield %>
 
