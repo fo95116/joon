@@ -143,17 +143,133 @@ $(function () {
                                       //============================ d3!!!!!!!!!!!!!!!!!=================
                                       // conditional to map words that are less than 10 with a different layout
                                       if($results.length <= 5) {
-                                        console.log($results.length)
-                                        console.log('array is small')
+                                        var fill = d3.scale.category20();
+
+                                        d3.layout.cloud().size([306, 306])
+                                            .words($results.map(function(d) {
+                                              return {text: d, size: 40 + Math.random() * 30};
+                                            }))
+                                            .padding(5)
+                                            .rotate(function() { return ~~(Math.random() * 2) ; })
+                                            .font("'Lily Script One', cursive")
+                                            .fontSize(function(d) { return d.size; })
+                                            .on("end", draw)
+                                            .start();
+
+                                        function draw(words) {
+                                          d3.select("body").append("svg")
+                                              .attr("width", 306)
+                                              .attr("height", 306)
+                                            .append("g")
+                                              .attr("transform", "translate(150,150)")
+                                            .selectAll("text")
+                                              .data(words)
+                                            .enter().append("text")
+                                              .style("font-size", function(d) { return d.size + "px"; })
+                                              .style("font-family", "'Lily Script One', cursive")
+                                              .style("fill", function(d, i) { return fill(i); })
+                                              .attr("text-anchor", "middle")
+                                              .attr("transform", function(d) {
+                                                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                                              })
+                                              .text(function(d) { return d.text; });
+                                        }
                                       } else if($results.length <= 10) {
-                                        console.log($results.length)
-                                        console.log('array is medium')
-                                      } else if($results.length <= 15) {
-                                        console.log($results.length)
-                                        console.log('array is big')
+                                        var fill = d3.scale.category20();
+
+                                        d3.layout.cloud().size([306, 306])
+                                            .words($results.map(function(d) {
+                                              return {text: d, size: 30 + Math.random() * 30};
+                                            }))
+                                            .padding(2)
+                                            .rotate(function(d) { return ~~(Math.random() * 2) * 90 ; })
+                                            .font("'Lobster Two', cursive")
+                                            .fontSize(function(d) { return d.size; })
+                                            .on("end", draw)
+                                            .start();
+
+                                        function draw(words) {
+                                          d3.select("body").append("svg")
+                                              .attr("width", 306)
+                                              .attr("height", 306)
+                                            .append("g")
+                                              .attr("transform", "translate(150,150)")
+                                            .selectAll("text")
+                                              .data(words)
+                                            .enter().append("text")
+                                              .style("font-size", function(d) { return d.size + "px"; })
+                                              .style("font-family", "'Lobster Two', cursive")
+                                              .style("fill", function(d, i) { return fill(i); })
+                                              .attr("text-anchor", "middle")
+                                              .attr("transform", function(d) {
+                                                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                                              })
+                                              .text(function(d) { return d.text; });
+                                        }
+                                      } else if($results.length <= 20) {
+                                        var fill = d3.scale.category20();
+
+                                        d3.layout.cloud().size([306, 306])
+                                            .words($results.map(function(d) {
+                                              return {text: d, size: 20 + Math.random() * 50};
+                                            }))
+                                            .padding(2)
+                                            .rotate(function(d) { return ~~(Math.random() * 2) * 90; })
+                                            .font("Impact")
+                                            .fontSize(function(d) { return d.size; })
+                                            .on("end", draw)
+                                            .start();
+
+                                        function draw(words) {
+                                          d3.select("body").append("svg")
+                                              .attr("width", 306)
+                                              .attr("height", 306)
+                                            .append("g")
+                                              .attr("transform", "translate(150,150)")
+                                            .selectAll("text")
+                                              .data(words)
+                                            .enter().append("text")
+                                              .style("font-size", function(d) { return d.size + "px"; })
+                                              .style("font-family", "Impact")
+                                              .style("fill", function(d, i) { return fill(i); })
+                                              .attr("text-anchor", "middle")
+                                              .attr("transform", function(d) {
+                                                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                                              })
+                                              .text(function(d) { return d.text; });
+                                        }
                                       } else {
-                                        console.log($results.length)
-                                        console.log('array is really big')
+                                        var fill = d3.scale.category20();
+
+                                        d3.layout.cloud().size([306, 306])
+                                            .words($results.map(function(d) {
+                                              return {text: d, size: 12 + Math.random() * 75};
+                                            }))
+                                            .padding(0.5)
+                                            .rotate(function(d) { return ~~(Math.random() * 4) * 45; })
+                                            .font("HelveticaNeue-Light")
+                                            .fontSize(function(d) { return d.size; })
+                                            .on("end", draw)
+                                            .start();
+
+                                        function draw(words) {
+                                          d3.select("body").append("svg")
+                                              .attr("width", 306)
+                                              .attr("height", 306)
+                                            .append("g")
+                                              .attr("transform", "translate(150,150)")
+                                            .selectAll("text")
+                                              .data(words)
+                                            .enter().append("text")
+                                              .style("font-size", function(d) { return d.size + "px"; })
+                                              .style("font-family", "HelveticaNeue-Light")
+                                              .style("fill", function(d, i) { return fill(i); })
+                                              .attr("text-anchor", "middle")
+                                              .attr("transform", function(d) {
+                                                return "translate(" + [d.x, d.y] + ")rotate(" + d.rotate + ")";
+                                              })
+                                              .text(function(d) { return d.text; });
+                                        }
                                       }
                                       // var fill = d3.scale.category20();
 
