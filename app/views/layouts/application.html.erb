@@ -12,15 +12,15 @@
 <body>
 
 
-  <header class="padding-top">
+  <header class="bck light">
     <div class="row">
       <div class="column_6">
-          <h2>welcome!</h2>
+          <h2>Welcome!</h2>
       </div>
       <nav class="column_6 text right">
           <% if current_user %>
-            Welcome <strong><%= current_user.name %></strong>
-            <%= link_to "Sign Out", signout_path, id: "sign_out" %>
+            <p><strong><%= current_user.name %></strong>
+            <%= link_to "Sign Out", signout_path, id: "sign_out" %></p>
           <% else %>
             <h2><%= link_to "Sign in with Instagram!", "/auth/instagram", id: "gram" %></h>
           <% end %>

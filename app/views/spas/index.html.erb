@@ -1,33 +1,39 @@
 <% unless !current_user %>
-<section class="padding bck dark">
-  <div class="row">
-    <div class="column_4">
-        <div id="search">
-          <h2>Hola!</h2>
-          <%= form_tag('/sessions', :remote => true) do %>
-            <%= text_field_tag "username", nil, :placeholder => "username", :size => 30 %>
-            <%= submit_tag "return", :id => "button" %>
-          <% end %>
+
+    <section class="padding">
+      <div class="row">
+        <div class="column_4">
+            <div id="search">
+              <h2>Hola!</h2>
+              <%= form_tag('/sessions', :remote => true) do %>
+                <%= text_field_tag "username", nil, :placeholder => "username", :size => 30 %>
+                <%= submit_tag "return", :id => "button" %>
+              <% end %>
+            </div>
         </div>
+        <div class="column_4">
+          <div id="errors"></div>
+        </div>
+      </div>
+    </section>
+
+
+<article class="padding scroll">
+    <div class="row">
+      <div id="pics"></div>
     </div>
-    <div class="column_4">
-      <div id="errors"></div>
+</article>
+
+
+
+<article class="padding scroll">
+    <div class="column_10 offset_1 text center">
+      <div id="user"></div>
     </div>
-  </div>
-</section>
-
-<section class="padding">
-  <div class="row"
-    <div id="pics"></div>
-  </div>
-</section>
-
-
-<section class="padding">
   <div class="row">
     <div id="images"></div>
   </div>
-</section>
+</article>
 
   <div id="final"></div>
 <% end %>

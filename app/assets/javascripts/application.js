@@ -32,13 +32,13 @@ $(function () {
           setTimeout(function(){
             //reload the page
             document.location.reload();
-          }, 3000)
+          }, 2000)
         // we will submit our logic in this section
         } else {
           // console.log('there is a value in here!');
           //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
           //we are making our api request to instagram and inserting the $username into the user_search request
-          $('section.padding.bck.dark').hide();
+          $('section.padding').hide();
           $.ajax({
                type: "GET",
                dataType: "jsonp",
@@ -62,9 +62,10 @@ $(function () {
                       // console.log($id);
 
                       $('#pics').append('<div class="column_3" id="' + $id + '">' +
-                                        $name + '</br>' +
+                                        '<h5>' + $name + '</h5>' + '</br>' +
                                         '<a href="#">' +
-                                        '<img src=' + '"' + $picture + '"' + '/>'+
+                                        '<img src=' + '"' + $picture + '"' +
+                                        'class="responsive rounded margin-bottom"' + '/>'+
                                         '</a>' +
                                         '</div>')
                           //======================================================
@@ -76,6 +77,8 @@ $(function () {
                             // console.log(target)
                             //==========================================================================
                             //we will inject the $id into our next ajax request to retrieve a users feed
+                            $('#pics').empty();
+                            $('#user').append('<h1>' + $name + '</h1>')
                             $.ajax({
                             type: "GET",
                             dataType: "jsonp",
@@ -98,8 +101,8 @@ $(function () {
                                   //     var $show = text['text']
                                   //     $('#images').append('<div>' + $show + '</br>' + '</div>')
                                   // })
+                                  console.log($name)
                                   console.log($p_id);
-                                  $('#pics').empty();
                                   // console.log($comments)
                                   // console.log($img)
                                   $('#images').append('<div class="column_4" id="' + $p_id + '">' +
@@ -182,10 +185,10 @@ $(function () {
 
                                         d3.layout.cloud().size([306, 306])
                                             .words($results.map(function(d) {
-                                              return {text: d, size: 18 + Math.random() * 40};
+                                              return {text: d, size: 20 + Math.random() * 55};
                                             }))
                                             .padding(2)
-                                            .rotate(function(d) { return ~~(Math.random() * 3) * 90; })
+                                            .rotate(function(d) { return ~~(Math.random() * 2) * 90; })
                                             .font("Impact")
                                             .fontSize(function(d) { return d.size; })
                                             .on("end", draw)
