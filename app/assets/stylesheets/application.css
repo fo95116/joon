@@ -55,6 +55,20 @@ h2, h3 { font-family: 'Lobster Two', cursive;}
   margin-bottom: 20px !important;
 }
 
+#images img {
+  display: block;
+  margin: auto;
+
+}
+
+#images img:hover {
+  filter: brightness(1.4);
+  -webkit-filter: brightness(1.4);
+  -moz-filter: brightness(1.4);
+  -o-filter: brightness(1.4);
+  -ms-filter: brightness(1.4);
+}
+
 .column_3:hover {font-weight: bold;}
 .column_3 img:hover {
   filter: blur(3px);
@@ -70,4 +84,17 @@ article.padding.scroll {
 
 header p {
   display: inline-block;
+}
+
+#user {
+  margin-bottom: 25px;
+  font-family: 'Lobster Two', cursive;
+}
+
+.column_4 {
+  margin-bottom: 30px !important;
+}
+
+#a header {
+  width: 306px;
 }

@@ -15,6 +15,9 @@
 //= require_tree .
 
 $(function () {
+  TukTuk.Modal.loading();
+
+
     $('input[name="commit"]').click(function(event) {
         event.preventDefault();
 
@@ -106,7 +109,7 @@ $(function () {
                                   // console.log($comments)
                                   // console.log($img)
                                   $('#images').append('<div class="column_4" id="' + $p_id + '">' +
-                                                      '<a href="#">' +
+                                                      '<a href="#" data-tuktuk-modal="a" data-tip="Map the comments for this image!">' +
                                                       '<img src=' + '"' +
                                                       $img + '"' + '/>' +
                                                       '</a>' +
@@ -126,7 +129,7 @@ $(function () {
                                       //comments is an array with objects that house my text data
                                       var $results = [];
                                       $('#final').append('<img src="' + $img + '"/>')
-
+                                      TukTuk.Modal.show("a")
                                       _.each($comments, function(txt) {
                                         // this section is where we have our comments as sentances
                                         // we must split our sentances into words and push them into an array
@@ -161,7 +164,7 @@ $(function () {
                                             .start();
 
                                         function draw(words) {
-                                          d3.select("body").append("svg")
+                                          d3.select("#final").append("svg")
                                               .attr("width", 306)
                                               .attr("height", 306)
                                             .append("g")
@@ -195,7 +198,7 @@ $(function () {
                                             .start();
 
                                         function draw(words) {
-                                          d3.select("body").append("svg")
+                                          d3.select("#final").append("svg")
                                               .attr("width", 306)
                                               .attr("height", 306)
                                             .append("g")
@@ -229,7 +232,7 @@ $(function () {
                                             .start();
 
                                         function draw(words) {
-                                          d3.select("body").append("svg")
+                                          d3.select("#final").append("svg")
                                               .attr("width", 306)
                                               .attr("height", 306)
                                             .append("g")
@@ -249,15 +252,18 @@ $(function () {
                                         console.log($results.length)
                                         console.log('this array is big')
                                       }
-
+                                    $('#b').click(function(event) {
+                                      event.preventDefault;
+                                      TukTuk.Modal.hide("b")
+                                    })
                                       //================================================================
                                     } else {
 
-                                      $('#final').append('<p>Sorry there are no comments for this image.</p>')
+                                      $('#false').append('<h1>Sorry there are no comments for this image.</h1>')
                                         setTimeout(function(){
                                         //reload the page
                                         document.location.reload();
-                                        }, 2000)
+                                        }, 3000)
                                     }
 
 
