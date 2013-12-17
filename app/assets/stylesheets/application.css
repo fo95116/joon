@@ -13,3 +13,16 @@
  */
 
 h2, h3 { font-family: 'Lobster Two', cursive;}
+
+.column_3 {
+  margin: 0 auto;
+}
+
+#button {
+  border-style: none;
+
+  background-color: white;
+  font-family: 'HelveticaNeue-Light';
+  padding: 5px;
+  font-size: 14px;
+}

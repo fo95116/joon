@@ -27,18 +27,18 @@ $(function () {
         // we are making a conditional to make sure that ther is a value submitted to our ajax request
         if($username == "") {
           // we determined that our value is empty. Append an error message
-          $('#errors').append('<h1>ERROR!</h1>');
+          $('#errors').append('<h2>Error!</h2>');
           // after the user has had time to read the message reload the page
           setTimeout(function(){
             //reload the page
             document.location.reload();
-          }, 1000)
+          }, 3000)
         // we will submit our logic in this section
         } else {
           // console.log('there is a value in here!');
           //+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
           //we are making our api request to instagram and inserting the $username into the user_search request
-          $('#search').empty();
+          $('section.padding.bck.dark').hide();
           $.ajax({
                type: "GET",
                dataType: "jsonp",
@@ -61,7 +61,7 @@ $(function () {
                       // console.log($name);
                       // console.log($id);
 
-                      $('#pics').append('<div id="' + $id + '">' +
+                      $('#pics').append('<div class="column_3" id="' + $id + '">' +
                                         $name + '</br>' +
                                         '<a href="#">' +
                                         '<img src=' + '"' + $picture + '"' + '/>'+
@@ -102,7 +102,7 @@ $(function () {
                                   $('#pics').empty();
                                   // console.log($comments)
                                   // console.log($img)
-                                  $('#images').append('<div id="' + $p_id + '">' +
+                                  $('#images').append('<div class="column_4" id="' + $p_id + '">' +
                                                       '<a href="#">' +
                                                       '<img src=' + '"' +
                                                       $img + '"' + '/>' +
