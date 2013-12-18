@@ -14,8 +14,17 @@
 //= require jquery_ujs
 //= require_tree .
 
+
+
 $(function () {
-  TukTuk.Modal.loading();
+
+  window.addEventListener("popstate", function(e) {
+
+    console.log(arguments)
+    // read the arguments to figure out what state you need return to
+    // change the page to however you need
+
+  });
 
 
     $('input[name="commit"]').click(function(event) {
@@ -25,7 +34,8 @@ $(function () {
         //constructor: function, init: function…]
         var $username = $('#username');
         //by making this variable a .val() it just returns what is inserted
-        var $username = $username.val()
+        var $username = $username.val();
+
 
         // we are making a conditional to make sure that ther is a value submitted to our ajax request
         if($username == "") {
@@ -154,9 +164,9 @@ $(function () {
 
                                         d3.layout.cloud().size([306, 306])
                                             .words($results.map(function(d) {
-                                              return {text: d, size: 35 + Math.random() * 30};
+                                              return {text: d, size: 32 + Math.random() * 30};
                                             }))
-                                            .padding(3)
+                                            .padding(.25)
                                             .rotate(function(d) { return ~~(Math.random() * 2) ; })
                                             .font("Lobster Two")
                                             .fontSize(function(d) { return d.size; })
@@ -188,9 +198,9 @@ $(function () {
 
                                         d3.layout.cloud().size([306, 306])
                                             .words($results.map(function(d) {
-                                              return {text: d, size: 20 + Math.random() * 55};
+                                              return {text: d, size: 25 + Math.random() * 60};
                                             }))
-                                            .padding(2)
+                                            .padding(.25)
                                             .rotate(function(d) { return ~~(Math.random() * 2) * 90; })
                                             .font("Impact")
                                             .fontSize(function(d) { return d.size; })
@@ -224,7 +234,7 @@ $(function () {
                                             .words($results.map(function(d) {
                                               return {text: d, size: 10 + Math.random() * 75};
                                             }))
-                                            .padding(0.25)
+                                            .padding(0.15)
                                             .rotate(function(d) { return ~~(Math.random() * 4) * 45; })
                                             .font("Lobster Two")
                                             .fontSize(function(d) { return d.size; })

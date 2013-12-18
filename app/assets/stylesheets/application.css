@@ -98,3 +98,10 @@ header p {
 #a header {
   width: 306px;
 }
+
+span.icon.home {
+  display: inline-block;
+  float: left;
+  height: 48px;
+}
+
