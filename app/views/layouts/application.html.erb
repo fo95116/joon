@@ -21,8 +21,6 @@
           <% if current_user %>
             <p><strong><%= current_user.name %></strong>
             <%= link_to "Sign Out", signout_path, id: "sign_out" %></p>
-          <% else %>
-            <h2><%= link_to "Sign in with Instagram!", "/auth/instagram", id: "gram" %></h>
           <% end %>
       </div>
     </div>
