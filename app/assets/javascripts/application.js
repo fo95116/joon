@@ -19,17 +19,19 @@
 $(function () {
 
 
-  $('#hamburger').click(function(event) {
-    event.preventDefault();
-    // TukTuk.Modal.show("a");
-    console.log('this button works')
-  })
-
-  // $('#slide').on('click', '#hamburger', function(event) {
+  // $('#hamburger').click(function(event) {
   //   event.preventDefault();
-  //   var selection = event.target;
-  //   TukTuk.Modal.show("a");
+  //   // TukTuk.Modal.show("a");
+  //   console.log('this button works')
   // })
+
+  $('div.column_4.text.left').on('click', '#slide', function(event) {
+    event.preventDefault();
+    var selection = event.target;
+    console.log(selection);
+
+    // TukTuk.Modal.show("a");
+  })
 
   $('#b').click(function(event) {
     event.preventDefault;
