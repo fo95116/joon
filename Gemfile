@@ -10,6 +10,7 @@ gem 'instagram'
 gem 'omniauth'
 gem 'omniauth-instagram'
 gem 'omniauth-facebook'
+gem 'figaro'
 
 group :development, :test do
   gem 'rspec-rails'
