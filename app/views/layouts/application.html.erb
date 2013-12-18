@@ -11,22 +11,9 @@
 </head>
 <body>
 
-
-  <header class="bck light">
-    <div class="row">
-      <div class="column_6">
-          <h2>Commenter</h2>
-      </div>
-      <div class="column_6 text right">
-          <% if current_user %>
-            <p><strong><%= current_user.name %></strong>
-            <%= link_to "Sign Out", signout_path, id: "sign_out" %></p>
-          <% end %>
-      </div>
-    </div>
-  </header>
-
 <%= yield %>
+
+
 
 </body>
 </html>

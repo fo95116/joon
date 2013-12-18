@@ -1,15 +1,19 @@
 
 <section class="padding bck color">
-  <div class="row">
+  <div class="row margin-bottom">
     <div class="column_4 offset_4 text center">
       <% if current_user %>
        <h1><%= link_to "You're in the wrong place", spas_path %></h1>
       <% end %>
+      <h1><strong>Thirst</strong> a gram</h1>
+    </div>
+  </div>
+  <div class="row">
+    <div class="column_4 offset_4 text center">
       <img src="assets/logo.png">
       <h2><%= link_to "Sign in with Instagram!", "/auth/instagram", id: "gram" %></h>
     </div>
   </div>
-
 </section>
 
 

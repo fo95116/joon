@@ -18,6 +18,24 @@
 
 $(function () {
 
+
+  $('#hamburger').click(function(event) {
+    event.preventDefault();
+    // TukTuk.Modal.show("a");
+    console.log('this button works')
+  })
+
+  // $('#slide').on('click', '#hamburger', function(event) {
+  //   event.preventDefault();
+  //   var selection = event.target;
+  //   TukTuk.Modal.show("a");
+  // })
+
+  $('#b').click(function(event) {
+    event.preventDefault;
+    TukTuk.Modal.hide("a");
+  })
+
   window.addEventListener("popstate", function(e) {
 
     console.log(arguments)

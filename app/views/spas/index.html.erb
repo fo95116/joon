@@ -1,3 +1,23 @@
+<header class="bck light padding-top">
+  <div class="row">
+      <div class="column_4 text left">
+        <div id="slide">
+          <a id="hamburger" href="#" data-tuktuk-modal="a" class="secondary"><h2>hamburger</h2></a>
+        </div>
+      </div>
+      <div class="column_4 text center hide-phone">
+        <h2>Thirsty!</h2>
+      </div>
+      <div class="column_4 text right hide-phone">
+          <% if current_user %>
+            <p><strong><%= current_user.name %></strong>
+            <%= link_to "Sign Out", signout_path, id: "sign_out" %></p>
+          <% end %>
+      </div>
+  </div>
+</header>
+
+
 <% unless !current_user %>
 
     <section class="padding">
@@ -37,15 +57,6 @@
   </div>
 </article>
 
-<!-- <div class="row">
-  <div id="a" data-tuktuk="modal" class="column_4">
-    <header>
-      <h4 class="text book inline">Comments!</h4>
-      <button id="b" data-modal="close" class="transparent small on-right inline icon remove"></button>
-    </header>
-    <div id="final"></div>
-  </div>
-</div> -->
 
 <article class="padding scroll">
   <div id="row">
@@ -59,3 +70,14 @@
   <div id="false"></div>
 </div>
 <% end %>
+
+
+  <div id="a" data-tuktuk="modal" class="side column_3">
+    <div>
+      <header>
+        <h1 class="text book inline">Menu</h1>
+        <button id="b" data-modal="close" class="transparent small on-right inline icon remove"></button>
+      </header>
+      <%= render 'hamburger' %>
+    </div>
+  </div>
