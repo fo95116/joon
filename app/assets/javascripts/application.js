@@ -18,25 +18,17 @@
 
 $(function () {
 
-
-  // $('#hamburger').click(function(event) {
+  // $('#submit').click(function(event) {
   //   event.preventDefault();
-  //   // TukTuk.Modal.show("a");
-  //   console.log('this button works')
+  //   TukTuk.Modal.show("a")
+  //   console.log(event)
   // })
 
-  $('div.column_4.text.left').on('click', '#slide', function(event) {
-    event.preventDefault();
-    var selection = event.target;
-    console.log(selection);
+  // $('#b').click(function(event) {
+  //   event.preventDefault();
+  //   TukTuk.Modal.hide("a");
+  // })
 
-    // TukTuk.Modal.show("a");
-  })
-
-  $('#b').click(function(event) {
-    event.preventDefault;
-    TukTuk.Modal.hide("a");
-  })
 
   window.addEventListener("popstate", function(e) {
 

@@ -1,3 +1,5 @@
+
+<% unless !current_user %>
 <header class="bck light padding-top">
   <div class="row">
       <div class="column_4 text left">
@@ -17,8 +19,6 @@
   </div>
 </header>
 
-
-<% unless !current_user %>
 
     <section class="padding">
       <div class="row">
@@ -72,7 +72,7 @@
 <% end %>
 
 
-  <div id="a" data-tuktuk="modal" class="side column_3">
+<!--   <div id="a" data-tuktuk="modal" class="side column_3">
     <div>
       <header>
         <h1 class="text book inline">Menu</h1>
@@ -80,4 +80,4 @@
       </header>
       <%= render 'hamburger' %>
     </div>
-  </div>
+  </div> -->
