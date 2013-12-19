@@ -18,25 +18,9 @@
 
 $(function () {
 
-  // $('#submit').click(function(event) {
-  //   event.preventDefault();
-  //   TukTuk.Modal.show("a")
-  //   console.log(event)
-  // })
-
-  // $('#b').click(function(event) {
-  //   event.preventDefault();
-  //   TukTuk.Modal.hide("a");
-  // })
-
-
-  window.addEventListener("popstate", function(e) {
-
-    console.log(arguments)
-    // read the arguments to figure out what state you need return to
-    // change the page to however you need
-
-  });
+  $('#hamburger').click(function(event) {
+    document.location.reload();
+  })
 
 
     $('input[name="commit"]').click(function(event) {
